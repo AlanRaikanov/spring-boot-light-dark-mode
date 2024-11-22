@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Light & Dark Mode</title>
+    <link id="theme-style" rel="stylesheet" th:href="@{/css/light.css}">
+</head>
+<body>
+<div>
+    <h1>Welcome to Light/Dark Mode App!</h1>
+    <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+</div>
+
+<script>
+    function toggleTheme() {
+        const themeStyle = document.getElementById('theme-style');
+        const currentTheme = themeStyle.getAttribute('href');
+        if (currentTheme.includes('light.css')) {
+            themeStyle.setAttribute('href', '/css/dark.css');
+        } else {
+            themeStyle.setAttribute('href', '/css/light.css');
+        }
+    }
+</script>
+</body>
+</html>
